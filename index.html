@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Report Suite</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+<body>
+  <div class="container">
+    <h1>Weather Report Suite</h1>
+
+    <form id="weather-form">
+      <label for="city">Enter city name:</label>
+      <input type="text" id="city" name="city">
+      <button type="submit">Search</button>
+    </form>
+    <div class="toggle-container">
+      <span class="toggle-label">Units:</span>
+      <button id="unit-toggle" class="toggle-button toggle-theme">
+        
+
+        <span class="toggle-icon">
+          <i class="fas fa-thermometer-half"></i>
+        </span>
+        <span class="toggle-text">C</span>
+      </button>
+    </div>
+    
+
+    <!-- Add this button to the top of your page -->
+    <button id="theme-toggle" aria-label="Toggle theme">
+      <i id="theme-icon" class="fas fa-sun"></i>
+    </button>
+    </div>
+<br>
+    <div id="current-weather"></div>
+
+    <section id="forecast">
+        <h2>5-Day Forecast</h2>
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Date</h5>
+                <div class="weather-icon">
+                  <img src="" alt="weather-icon">
+                </div>
+                <p class="card-text">Temperature: <span class="temp"></span></p>
+                <p class="card-text">Humidity: <span class="humidity"></span></p>
+              </div>
+            </div>
+          </div>
+          <!-- Repeat the above card for each day of the forecast -->
+        </div>
+      </section>
+      
+
+  <script src="script.js"></script>
+</body>
+</html>
