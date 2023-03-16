@@ -40,12 +40,15 @@ async function getWeatherData(city, isMetric) {
       <div class="weather-icon">
         <img src="https://openweathermap.org/img/wn/${weather.icon}.png" alt="${weather.description}">
       </div>
-      <p>Temperature: ${current.temp}&deg;${isMetric ? 'C' : 'F'}</p>
+      <p id="ct">${current.temp}&deg;${isMetric ? 'C' : 'F'}</p>
+      <div id="grid">
       <p>Feels like: ${current.feels_like}&deg;${isMetric ? 'C' : 'F'}</p>
       <p>Humidity: ${current.humidity}%</p>
       <p>Wind speed: ${data.wind.speed} ${isMetric ? 'm/s' : 'mph'}</p>
       <p>Visibility: ${  data.visibility / 1000} ${isMetric ? 'km' : 'mi'}</p>
+      </div>
       `;
+
       
       const lat = data.coord.lat;
       const lon = data.coord.lon;
