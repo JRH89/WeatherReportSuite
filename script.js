@@ -53,64 +53,70 @@ async function getWeatherData(city, isMetric) {
         console.error(error);
         alert('Unable to retrieve weather data');
         }
-        }
+
+}
         
-        async function getForecastData(lat, lon, isMetric) {
-            const units = isMetric ? 'metric' : 'imperial';
-            const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+async function getForecastData(lat, lon, isMetric) {
+  const units = isMetric ? 'metric' : 'imperial';
+  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
           
-            try {
-              const response = await fetch(apiUrl);
-              if (!response.ok) {
-                throw new Error('Unable to retrieve forecast data');
-              }
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error('Unable to retrieve forecast data');
+    }
           
-              const data = await response.json();
-              const forecastData = data.list.filter(item => item.dt_txt.includes('12:00:00'));
+    const data = await response.json();
+    const forecastData = data.list.filter(item => item.dt_txt.includes('12:00:00'));     
+    forecast.innerHTML = `  
+      <div class="forecast-items">
+      ${forecastData.map(item => `
+      <div class="forecast-item">
+      <p>${new Date(item.dt_txt).toLocaleDateString()}</p>
+      <div class="weather-icon">
+      <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}.png" alt="${item.weather[0].description}">
+      </div>
+      <p>Temp: ${item.main.temp}&deg;${isMetric ? 'C' : 'F'}</p>
+      <p>Humidity: ${item.main.humidity}%</p>
+      </div>
+    `).join('')}
+      </div>
+      `;
+
+  } 
+  
+  catch (error) {
+
+    console.error(error);
+    alert('Unable to retrieve forecast data');
+
+  }
+
+}
           
-              forecast.innerHTML = `
-                
-                <div class="forecast-items">
-                  ${forecastData.map(item => `
-                    <div class="forecast-item">
-                      <p>${new Date(item.dt_txt).toLocaleDateString()}</p>
-                      <div class="weather-icon">
-                        <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}.png" alt="${item.weather[0].description}">
-                      </div>
-                      <p>Temp: ${item.main.temp}&deg;${isMetric ? 'C' : 'F'}</p>
-                      <p>Humidity: ${item.main.humidity}%</p>
-                    </div>
-                  `).join('')}
-                </div>
-              `;
-            } catch (error) {
-              console.error(error);
-              alert('Unable to retrieve forecast data');
-            }
-          }
-          const themeToggle = document.getElementById('theme-toggle');
-          const themeIcon = document.getElementById('theme-icon');
-          
-          themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            themeIcon.classList.toggle('fa-sun');
-            themeIcon.classList.toggle('fa-moon');
-          });
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+themeToggle.addEventListener('click', () => {
+
+  document.body.classList.toggle('dark-mode');
+  themeIcon.classList.toggle('fa-sun');
+  themeIcon.classList.toggle('fa-moon');
+
+});
                     
 unitToggle.addEventListener("click", function() {
-    // Toggle the units between "C" and "F"
-    isMetric = !isMetric;
-    if (unitToggle.textContent === "C") {
+  isMetric = !isMetric;
+
+  if (unitToggle.textContent === "C") {
     unitToggle.textContent = "F";
-    } else {
+  } else {
     unitToggle.textContent = "C";
-    }
-            
-    // Call the getWeatherData function to update the weather data
-    const city = cityInput.value.trim();
-    if (city) {
+  }
+
+  const city = cityInput.value.trim();
+  if (city) {
     getWeatherData(city, isMetric);
-    }
+  }
+
 });          
-          
           
