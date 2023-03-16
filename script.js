@@ -5,7 +5,7 @@ const forecast = document.getElementById('forecast');
 const unitToggle = document.getElementById('unit-toggle');
 const unitLabel = document.getElementById('unit-label');
 const apiKey = '35913733e7f076a1cac136c1de270b7d';
-let isMetric = true;
+let isMetric = false;
 
 getWeatherData("San Francisco", isMetric);
 
@@ -55,6 +55,12 @@ async function getWeatherData(city, isMetric) {
         console.error(error);
         alert('Unable to retrieve weather data');
         }
+
+// Set dark mode by default
+document.body.classList.add('dark-mode');
+themeIcon.classList.toggle('fa-sun');
+themeIcon.classList.toggle('fa-moon');
+
 
 }
         
