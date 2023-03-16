@@ -56,10 +56,8 @@ async function getWeatherData(city, isMetric) {
         alert('Unable to retrieve weather data');
         }
 
-// Set dark mode by default
-document.body.classList.add('dark-mode');
-themeIcon.classList.toggle('fa-sun');
-themeIcon.classList.toggle('fa-moon');
+  // Set dark mode by default
+  document.body.classList.add('dark-mode');
 
 
 }
@@ -115,15 +113,15 @@ themeToggle.addEventListener('click', () => {
 unitToggle.addEventListener("click", function() {
   isMetric = !isMetric;
 
-  if (unitToggle.textContent === "C") {
-    unitToggle.textContent = "F";
-  } else {
+  if (unitToggle.textContent === "F") {
     unitToggle.textContent = "C";
+  } else {
+    unitToggle.textContent = "F";
   }
 
   const city = cityInput.value.trim();
   if (city) {
-    getWeatherData(city, !isMetric);
+    getWeatherData(city, isMetric);
   }
 
 });          

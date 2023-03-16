@@ -1,11 +1,11 @@
 * {
     box-sizing: border-box;
-   
+    font-family: 'Tilt Neon', cursive;
   }
   
 
   :root {
-    --bg-color: #f5f5f5;
+    --bg-color: #adcaf4;
     --text-color: #333;
   }
 
@@ -59,9 +59,10 @@
     margin: 0;
   }
 
-  #forecast  {
-    
+  .fas {
+    visibility: visible;
   }
+  
   
   form {
     display: flex;
@@ -72,22 +73,22 @@
   }
   
   input[type="text"] {
-    width: 300px;
+    width: 90%;
     padding: 10px;
-    border: 1px solid #2196F3;
-    border-radius: 5px 0 0 5px;
-    font-size: 16px;
+    border: 2px solid yellow;
+    border-radius: 12px;
+    font-size: 1em;
     background-color: var(--bg-color);
     color: var(--text-color);
   }
   
   button[type="submit"] {
-    padding: 10px 20px;
+    padding: 10px;
     border: none;
-    border-radius: 0 5px 5px 0;
-    background-color: #2196F3;
+    border-radius: 12px;
+    background-color: #1F51FF;
     color: #fff;
-    font-size: 16px;
+    font-size: 1em;
     cursor: pointer;
   }
   
@@ -135,6 +136,7 @@
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
+    #2196F3
   }
   
   .forecast-item {
@@ -145,6 +147,7 @@
     color: var(--text-color);
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid yellow;
   }
   
   @media screen and (max-width: 768px) {
