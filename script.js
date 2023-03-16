@@ -123,7 +123,7 @@ unitToggle.addEventListener("click", function() {
 
   const city = cityInput.value.trim();
   if (city) {
-    getWeatherData(city, isMetric);
+    getWeatherData(city, !isMetric);
   }
 
 });          
