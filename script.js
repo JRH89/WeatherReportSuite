@@ -7,23 +7,13 @@ const unitLabel = document.getElementById('unit-label');
 const apiKey = '35913733e7f076a1cac136c1de270b7d';
 let isMetric = true;
 
-unitToggle.addEventListener('click', () => {
-  isMetric = !isMetric;
-  unitLabel.textContent = isMetric ? 'Metric' : 'Imperial';
-  unitToggle.classList.toggle('unit-toggle-metric');
-  unitToggle.classList.toggle('unit-toggle-imperial');
-});
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-
   const city = cityInput.value.trim();
-
   if (!city) {
     alert('Please enter a city name');
     return;
   }
-
   getWeatherData(city, isMetric);
 });
 
@@ -79,7 +69,7 @@ async function getWeatherData(city, isMetric) {
               const forecastData = data.list.filter(item => item.dt_txt.includes('12:00:00'));
           
               forecast.innerHTML = `
-                <h2>5-Day Forecast</h2>
+                
                 <div class="forecast-items">
                   ${forecastData.map(item => `
                     <div class="forecast-item">
@@ -107,5 +97,20 @@ async function getWeatherData(city, isMetric) {
             themeIcon.classList.toggle('fa-moon');
           });
                     
-          
+unitToggle.addEventListener("click", function() {
+    // Toggle the units between "C" and "F"
+    isMetric = !isMetric;
+    if (unitToggle.textContent === "C") {
+    unitToggle.textContent = "F";
+    } else {
+    unitToggle.textContent = "C";
+    }
             
+    // Call the getWeatherData function to update the weather data
+    const city = cityInput.value.trim();
+    if (city) {
+    getWeatherData(city, isMetric);
+    }
+});          
+          
+          
