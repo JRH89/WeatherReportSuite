@@ -19,15 +19,15 @@
     .container {
         flex-basis: calc(50% - 10px);
         margin-bottom: 20px;
-        padding: none;
+        padding: .2em;
         border-radius: 5px;
         background-color: var(--bg-color);
         color: var(--text-color);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         text-align: center;
-        height: 90%;
-        width: 90%;
-        max-width: 800px;
+        height: 100%;
+        width: 100%;
+        
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -38,8 +38,8 @@
   
   
   h1 {
-    font-family: 'Tilt Neon', sans-serif;
-    font-size: 4rem;
+    font-family: 'Play', sans-serif;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 2rem;
   }
@@ -143,30 +143,30 @@
   
   .col-sm-12 {
     flex: 1 0 100%;
-    padding: 1rem;
+    padding: .2rem;
   }
   
   @media (max-width: 480px) {
     .col-md-6 {
-      flex: 0 0 calc(50% - 10px);
+      flex: 0 0 calc(50%);
     }
   }
   @media (min-width: 576px) {
     .col-md-6 {
-      flex: 0 0 calc(50% - 10px);
-      padding: 1rem;
+      flex: 0 0 calc(50%);
+      padding: .2rem;
     }
   }
   @media screen and (max-width: 768px) {
     .col-md-6 {
-      flex: 0 0 calc(50% - 10px);
-      padding: 1rem;
+      flex: 0 0 calc(50%);
+      padding: .2rem;
     }
   }
   @media (min-width: 992px) {
     .col-lg-4 {
       flex: 1 0 33.33%;
-      padding: 1rem;
+      padding: .2rem;
     }
   }
 
@@ -204,5 +204,9 @@ body.dark-mode {
   }
   
   .btn.dark-mode:hover {
+    background-color: #eee;
+  }
+
+  .btn.dark-mode {
     background-color: #eee;
   }
