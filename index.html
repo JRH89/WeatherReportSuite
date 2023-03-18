@@ -4,51 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather Report Suite</title>
+
+
+  <meta property="og:type" content="article" />
+<meta property="og:title" content="Sammy the Shark" />
+<meta property="og:description" content="Weather Report Suite" />
+<meta property="og:url" content="https://jrh89.github.io/WeatherReportSuite" />
+<link rel="icon" type="image/vnd.microsoft.icon" href="images/Weather Forecast symbol - 640x622.ico" />
+
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
-<body>
-  <div class="container">
-    <h1>Weather Report Suite</h1>
-    <form id="weather-form">
-      <label for="city">Enter city name:</label>
-      <input type="text" id="city" name="city">
-      <button type="submit">Search</button>
-    </form>
-    <div class="toggle-container">
-      <span class="toggle-label"></span>
-      <button id="unit-toggle" class="toggle-button">
-        
+  <div>
+    <nav class="container">
+      <h1>Weather Report Suite</h1>
+    </nav>
+    <br>
+    <div class="container">
+      <form id="weather-form">
+        <label for="city">City name:</label>
+        <input type="text" id="city" name="city">
+        <button type="submit">Search</button>
+      </form>
+      <div class="toggle-container">
+        <span class="toggle-label"></span>
+        <button id="unit-toggle" class="toggle-button">
           <i class="fas fa-thermometer-half"></i>
-        
-        <span class="toggle-text">F</span>
-      </button>
-      <button id="theme-toggle" aria-label="Toggle theme">
-      <i id="theme-icon" class="fas fa-sun"></i>
-      </button>
+          <span class="toggle-text">F</span>
+        </button>
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <i id="theme-icon" class="fas fa-sun"></i>
+        </button>
+      </div>  
     </div>
-    
-  </div>
     <div id="current-weather"></div>
-    <h2>5-Day Forecast</h2>
-    <section id="forecast">
-        <div class="row">
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title"></h5>
-                <div class="weather-icon">
+      <h2>5-Day Forecast</h2>
+        <section id="forecast">
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"></h5>
+                  <div class="weather-icon">
+                  </div>
+                  <p class="card-text"><span class="temp"></span></p>
+                  <p class="card-text"><span class="humidity"></span></p>
                 </div>
-                <p class="card-text"><span class="temp"></span></p>
-                <p class="card-text"><span class="humidity"></span></p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-  <script src="script.js"></script>
-</body>
+        </section>
+      </div>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -29,7 +29,7 @@
   grid-template-columns: auto auto;
   grid-row: auto auto;
   grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-row-gap: 5px;
   justify-content: center;
   text-align: center;
   font-size: 1.5em;
@@ -38,7 +38,7 @@
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Tilt Neon', cursive;
+    font-family: 'Play', cursive;
     font-size: 1.5em;
     line-height: 1.5;
     background-color: var(--bg-color);
@@ -47,8 +47,9 @@
 
   }
   
+
+  
   .container {
-    
     height: 90%;
     width: 90%;
     max-width: 600px;
@@ -63,14 +64,18 @@
   h1 {
     text-align: center;
     margin: 0;
-    
+    text-decoration: underline;
+    width: 100%;
+    --bg-color: #7ebddd;
+    position: fixed;
+    top: 0;
+    --color: var(--text-color);
   }
 
   h2 {
     text-align: center;
     align-items: center;
     margin: 0;
-    
   }
 
   .fas {
@@ -89,8 +94,8 @@
   input[type="text"] {
     width: 90%;
     padding: 10px;
-    border: 3px solid #0d3570;
-    box-shadow: 0 0 10px #1f50ff75;
+    border: 3px solid var(--text-color);
+    box-shadow: 0 0 10px var(--bg-color);
     border-radius: 12px;
     font-size: 1em;
     background-color: var(--bg-color);
@@ -100,16 +105,19 @@
   button[type="submit"] {
     padding: 10px;
     border: none;
-    border: 2px solid white;
+    border: 2px solid  var(--text-color);
     border-radius: 12px;
-    background-color: #0d3570;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-size: 1em;
     cursor: pointer;
   }
   
   button[type="submit"]:hover {
-    background-color: #5c8cd5;
+    color:yellow;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.596);
+    border:2px solid yellow;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.596) ease;
   }
   
   .weather-icon > img {
@@ -123,7 +131,6 @@
     border-radius: 5px;
     background-color: var(--bg-color);
     color: var(--text-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,12 +141,12 @@
     font-size: 3em;
     margin: 0;
     color:yellow;
-    text-shadow: 0 0 20px rgba(255, 255, 0, 0.596);
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.596);
   }
   
   #current-weather h2 {
     color:yellow;
-    text-shadow: 0 0 20px rgba(255, 255, 0, 0.596);
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.596);
   }
   
   #forecast {

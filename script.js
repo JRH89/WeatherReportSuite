@@ -37,9 +37,12 @@ async function getWeatherData(city, isMetric) {
 
     currentWeather.innerHTML = `
       <h2>${data.name}, ${data.sys.country}</h2>
+      
       <div class="weather-icon">
         <img src="https://openweathermap.org/img/wn/${weather.icon}.png" alt="${weather.description}">
-      </div>
+        <p>${weather.description}</p>
+        </div>
+      
       <p id="ct">${current.temp}&deg;${isMetric ? 'C' : 'F'}</p>
       <div id="grid">
       <p>Feels like: ${current.feels_like}&deg;${isMetric ? 'C' : 'F'}</p>
@@ -62,7 +65,6 @@ async function getWeatherData(city, isMetric) {
   // Set dark mode by default
   document.body.classList.add('dark-mode');
 
-
 }
         
 async function getForecastData(lat, lon, isMetric) {
@@ -80,25 +82,23 @@ async function getForecastData(lat, lon, isMetric) {
     forecast.innerHTML = `  
       <div class="forecast-items">
       ${forecastData.map(item => `
-      <div class="forecast-item">
-      <p>${new Date(item.dt_txt).toLocaleDateString()}</p>
-      <div class="weather-icon">
-      <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}.png" alt="${item.weather[0].description}">
+        <div class="forecast-item">
+        <p>${new Date(item.dt_txt).toLocaleDateString()}</p>
+        <div class="weather-icon">
+        <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}.png" alt="${item.weather[0].description}">
+        </div>
+        <p>Temp: ${item.main.temp}&deg;${isMetric ? 'C' : 'F'}</p>
+        <p>Humidity: ${item.main.humidity}%</p>
+        </div>
+      `).join('')}
       </div>
-      <p>Temp: ${item.main.temp}&deg;${isMetric ? 'C' : 'F'}</p>
-      <p>Humidity: ${item.main.humidity}%</p>
-      </div>
-    `).join('')}
-      </div>
-      `;
+    `;
 
   } 
   
   catch (error) {
-
     console.error(error);
     alert('Unable to retrieve forecast data');
-
   }
 
 }
