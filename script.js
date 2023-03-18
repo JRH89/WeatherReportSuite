@@ -44,7 +44,7 @@ async function getWeatherData(city, isMetric) {
       <div id="grid">
       <p>Feels like: ${current.feels_like}&deg;${isMetric ? 'C' : 'F'}</p>
       <p>Humidity: ${current.humidity}%</p>
-      <p>Wind speed: ${data.wind.speed} ${isMetric ? 'm/s' : 'mph'}</p>
+      <p>Wind: ${data.wind.speed} ${isMetric ? 'm/s' : 'mph'}</p>
       <p>Visibility: ${  data.visibility / 1000} ${isMetric ? 'km' : 'mi'}</p>
       </div>
       `;

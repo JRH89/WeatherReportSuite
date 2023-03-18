@@ -1,11 +1,11 @@
 * {
     box-sizing: border-box;
-    font-family: 'Tilt Neon', cursive;
+    font-family: 'Play', cursive;
   }
   
 
   :root {
-    --bg-color: #adcaf4;
+    --bg-color: #7ebddd;
     --text-color: #333;
   }
 
@@ -32,6 +32,7 @@
   grid-row-gap: 20px;
   justify-content: center;
   text-align: center;
+  font-size: 1.5em;
  
 }
   body {
@@ -42,7 +43,7 @@
     line-height: 1.5;
     background-color: var(--bg-color);
     color: var(--text-color);
-
+    
 
   }
   
@@ -61,12 +62,15 @@
   
   h1 {
     text-align: center;
+    margin: 0;
+    
   }
 
   h2 {
     text-align: center;
     align-items: center;
     margin: 0;
+    
   }
 
   .fas {
@@ -85,8 +89,8 @@
   input[type="text"] {
     width: 90%;
     padding: 10px;
-    border: 2px solid yellow;
-    box-shadow: 2px 2px 5px rgba(255, 255, 0, 0.24);
+    border: 3px solid #0d3570;
+    box-shadow: 0 0 10px #1f50ff75;
     border-radius: 12px;
     font-size: 1em;
     background-color: var(--bg-color);
@@ -96,17 +100,23 @@
   button[type="submit"] {
     padding: 10px;
     border: none;
+    border: 2px solid white;
     border-radius: 12px;
-    background-color: #1F51FF;
+    background-color: #0d3570;
     color: #fff;
     font-size: 1em;
     cursor: pointer;
   }
   
   button[type="submit"]:hover {
-    background-color: #0D47A1;
+    background-color: #5c8cd5;
   }
   
+  .weather-icon > img {
+    width: 100px;
+    height: 100px;
+  }
+
   #current-weather {
     margin-bottom: 20px;
     padding: 20px;
@@ -124,9 +134,13 @@
     font-size: 3em;
     margin: 0;
     color:yellow;
-    text-shadow: yellow;
+    text-shadow: 0 0 20px rgba(255, 255, 0, 0.596);
   }
   
+  #current-weather h2 {
+    color:yellow;
+    text-shadow: 0 0 20px rgba(255, 255, 0, 0.596);
+  }
   
   #forecast {
     display: flex;
