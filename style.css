@@ -66,10 +66,10 @@
     margin: 0;
     text-decoration: underline;
     width: 100%;
-    background-color: black;
+    background-color: #000;
     position: fixed;
     top: 0;
-    --color: var(--text-color);
+    color: #fff;
   }
 
   h2 {
