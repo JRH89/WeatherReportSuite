@@ -87,12 +87,10 @@ nav  {
     margin: 0;
     text-decoration: underline;
     width: 100%;
-    --bg-color: #7ebddd;
-    position: fixed;
+    background-color: #000;
+   
     top: 0;
     --color: var(--text-color);
-    align-content: center;
-    justify-content: center;
   }
 
   h2 {
