@@ -84,7 +84,6 @@ nav  {
     margin: 0;
     text-decoration: underline;
     width: 100%;
-    background-color: #000;
     top: 0;
     --color: var(--text-color);
   }
@@ -121,7 +120,6 @@ nav  {
   
   button[type="submit"] {
     padding: 10px;
-    border: none;
     border: 2px solid  var(--text-color);
     border-radius: 12px;
     background-color: var(--bg-color);
