@@ -56,19 +56,17 @@ nav h1 {
   width: 100%;
   max-width: 800px;
   align-content: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 nav  {
-  background-color:black;
   width: 100%;
   max-width: 800px;
   align-content: center;
-    justify-content: center;
+  justify-content: center;
 }
-  
   
   .container {
     height: 90%;
