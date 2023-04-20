@@ -85,7 +85,7 @@ nav  {
     text-decoration: underline;
     width: 100%;
     top: 0;
-    --color: var(--text-color);
+    color: var(--text-color);
   }
 
   h2 {
