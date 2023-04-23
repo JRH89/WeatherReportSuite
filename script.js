@@ -7,8 +7,6 @@ const unitLabel = document.getElementById('unit-label');
 const apiKey = '35913733e7f076a1cac136c1de270b7d';
 let isMetric = false;
 
-getWeatherData("San Francisco", isMetric);
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const city = cityInput.value.trim();
@@ -62,8 +60,7 @@ async function getWeatherData(city, isMetric) {
         alert('Unable to retrieve weather data');
         }
 
-  // Set dark mode by default
-  document.body.classList.add('dark-mode');
+  
 
 }
         
